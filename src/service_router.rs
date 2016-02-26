@@ -81,6 +81,7 @@ describe! service_router {
                         &service_router).unwrap();
 
         let result = response::extract_body_to_string(response);
-        assert_eq!(result, "No Such Service: unknown-id");
+        assert_eq!(result,
+            "{\"result\": \"error\", \"details\": \"No Such Service: unknown-id\"}");
     }
 }
